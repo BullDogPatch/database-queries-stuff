@@ -15,13 +15,5 @@ app.get('/', (req, res) => {
   );
 });
 
-app.get('/flamingo-images', async (req, res) => {
-  const API = `https://api.unsplash.com/search/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query=flamingo`;
-  const response = await fetch(API);
-  const data = await response.json();
-
-  res.json(data.results);
-});
-
 const PORT = 8080;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
