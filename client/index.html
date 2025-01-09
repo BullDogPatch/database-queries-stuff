@@ -11,7 +11,33 @@
       <header>
         <h1>Liverpool's best players</h1>
       </header>
+      <form id="add-player-form">
+        <label for="add-name">Name:</label>
+        <input type="text" name="add-name" id="add-name" />
 
+        <label for="add-shirt-number">Shirt number:</label>
+        <input type="text" name="add-shirt-number" id="add-shirt-number" />
+
+        <label for="add-position">Position: </label>
+        <input type="text" name="add-position" id="add-position" />
+
+        <label for="add-nationality">Nationality: </label>
+        <input type="text" name="add-nationality" id="add-nationality" />
+
+        <label for="is-captain">Captain:</label>
+        <input type="radio" id="captain-true" name="is-captain" value="true" />
+        <label for="captain-true">Yes</label>
+
+        <input
+          type="radio"
+          id="captain-false"
+          name="is-captain"
+          value="false"
+        />
+        <label for="captain-false">No</label>
+
+        <button type="submit">Add player</button>
+      </form>
       <div class="players-container"></div>
     </div>
     <script type="module" src="/src/main.js"></script>

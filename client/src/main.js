@@ -25,3 +25,30 @@ const getSomePlayersFromDatabase = async () => {
 };
 
 getSomePlayersFromDatabase();
+
+const getCaptain = async () => {
+  const response = await fetch('http://localhost:8080/captain');
+  const data = await response.json();
+  console.log(data);
+};
+
+getCaptain();
+
+const addPlayerForm = document.querySelector('#add-player-form');
+
+const addPlayer = (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(addPlayerForm);
+  const playerName = formData.get('add-player');
+
+  fetch('http://localhost:8080/players', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ data: playerName }),
+  });
+};
+
+addPlayerForm.addEventListener('submit', addPlayer);

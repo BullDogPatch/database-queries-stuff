@@ -27,5 +27,15 @@ app.get('/players', async (req, res) => {
   res.json(query.rows);
 });
 
+app.get('/captain', async (req, res) => {
+  const query = await db.query(`SELECT * FROM players WHERE is_captain = true`);
+  res.json(query.rows[0]);
+});
+
+app.post('/players', async (req, res) => {
+  const query = await db.query(`SELECT * FROM players WHERE is_captain = true`);
+  res.json(query.rows);
+});
+
 const PORT = 8080;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
