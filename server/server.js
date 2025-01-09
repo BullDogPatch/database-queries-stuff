@@ -23,7 +23,6 @@ const db = new pg.Pool({
 });
 
 app.get('/players', async (req, res) => {
-  const query = await db.query(`SELECT * FROM players`);
   res.json(query.rows);
 });
 
@@ -33,7 +32,7 @@ app.get('/captain', async (req, res) => {
 });
 
 app.post('/players', async (req, res) => {
-  const query = await db.query(`SELECT * FROM players WHERE is_captain = true`);
+  const query = await db.query(`INSERT INTO players (name) `);
   res.json(query.rows);
 });
 
