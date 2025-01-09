@@ -10,5 +10,10 @@ const db = new pg.Pool({
 
 db.query(
   `INSERT INTO players (name, shirt_number, position, nationality, is_captain)
-  VALUES ('Cody Gakpo', '18', 'forward', 'dutch', 'false')`
+  VALUES 
+  ('Cody Gakpo', '18', 'forward', 'dutch', 'false'),
+  ('Darwin Núñez', '9', 'forward', 'Uruguay', 'false'),
+  ('Alexis Mac Allister', '10', 'midfield', 'Argentinian', 'false')
+
+  `
 );
